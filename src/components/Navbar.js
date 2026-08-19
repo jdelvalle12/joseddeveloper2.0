@@ -1,64 +1,109 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = ({ currentPage, handlePageChange }) => {
-  const [showMenu, setShowMenu] = useState(false);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <nav className="navbar">
-      <button className="toggle-button" onClick={() => setShowMenu(!showMenu)}>
-        <span className="line"></span>
-        <span className="line"></span>
-        <span className="line"></span>
+    <nav className="site-navbar">
+
+      {/* Desktop / Tablet Navigation */}
+      <div className="desktop-nav">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+          About
+        </NavLink>
+
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+          Projects
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive ? 'nav-link active' : 'nav-link'
+          }
+        >
+          Contact
+        </NavLink>
+      </div>
+
+      {/* Mobile Hamburger */}
+      <button
+        className={`hamburger ${isMenuOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+        aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
 
-      <ul className={`nav-tabs ${showMenu ? 'active' : ''}`}>
-        <li className="nav-item">
-          <a
-            href="/home"
-            onClick={() => handlePageChange('Home')}
-            className={currentPage === 'Home' ? 'nav-link active' : 'nav-link'}
-          >
-            Home
-          </a>
-        </li>
-        <li className="aboutme">
-          <a
-            href="/about"
-            onClick={() => handlePageChange('About')}
-            className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
-          >
-            About
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="/projects"
-            onClick={() => handlePageChange('Projects')}
-            className={currentPage === 'Projects' ? 'nav-link active' : 'nav-link'}
-          >
-            Projects
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="/resume"
-            onClick={() => handlePageChange('Resume')}
-            className={currentPage === 'resume' ? 'nav-link active' : 'nav-link'}
-          >
-            Resume
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="/contact"
-            onClick={() => handlePageChange('Contact')}
-            className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}
-          >
-            Contact
-          </a>
-        </li>
-      </ul>
+      {/* Mobile Navigation */}
+      <div
+        id="mobile-menu"
+        className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}
+      >
+        <NavLink
+          to="/about"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? 'mobile-nav-link active' : 'mobile-nav-link'
+          }
+        >
+          About
+        </NavLink>
+
+        <NavLink
+          to="/projects"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? 'mobile-nav-link active' : 'mobile-nav-link'
+          }
+        >
+          Projects
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          onClick={closeMenu}
+          className={({ isActive }) =>
+            isActive ? 'mobile-nav-link active' : 'mobile-nav-link'
+          }
+        >
+          Contact
+        </NavLink>
+      </div>
+
     </nav>
   );
 };

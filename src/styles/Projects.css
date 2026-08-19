@@ -1,100 +1,443 @@
-/* .projects-container {
-  position: relative;
-  padding-bottom: 14rem;
-  z-index: 1;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center; 
-  font-size: 2rem;
+/* =========================
+   Projects Page
+========================= */
+
+.projects-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #080812;
   color: whitesmoke;
-  height: auto;
-  width: auto;
-  text-decoration: none;
-  margin-bottom: 2rem;
 }
 
-.projects-background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100.4%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1; 
+
+/* =========================
+   Main Content
+========================= */
+
+.projects-content {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 5rem 0 7rem;
 }
 
-.projects-section span {
-  font-size: 28px;
-  position: relative;
-}
 
-.title {
-  font-size: 1.5rem;
+/* =========================
+   Page Title
+========================= */
+
+.projects-title {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
-.title:hover {
-  color: rgb(245, 71, 40);
+.projects-title p {
+  margin: 0 0 0.5rem;
+
+  color: cyan;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3rem;
 }
+
+.projects-title h1 {
+  margin: 0;
+
+  color: whitesmoke;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.projects-title span {
+  display: block;
+
+  margin-top: 1rem;
+
+  color: #bdbdbd;
+
+  font-size: 1rem;
+}
+
+
+/* =========================
+   Project Grid
+========================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 2rem;
+}
+
+
+/* =========================
+   Project Card
+========================= */
 
 .project-card {
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: rgba(15, 15, 30, 0.95);
+
+  border: 1px solid rgba(0, 255, 255, 0.2);
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(0, 255, 255, 0.7);
+
+  box-shadow:
+    0 15px 40px rgba(0, 255, 255, 0.12);
+}
+
+
+/* =========================
+   Project Image
+========================= */
+
+.project-image-container {
   position: relative;
-}
-.project-card {
-  position: relative; 
-  width: 12rem; 
-  height: 9rem; 
-  margin: 0 45px; 
-  top: 4rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #050505;
 }
 
-.project-card img {
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  transition: transform 0.3s ease-in-out;
-}
-
-.project-card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-image-link {
+  position: relative;
+  display: block;
   width: 100%;
   height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+
+/* =========================
+   Image Hover Overlay
+========================= */
+
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
+
+  background: rgba(0, 0, 0, 0.72);
+
   opacity: 0;
-  transition: opacity 0.3s ease-in-out; 
+
+  transition: opacity 0.3s ease;
+
+  /* Allows clicks to reach the <a> */
+  pointer-events: none;
 }
 
-.project-card:hover .project-card-overlay {
-  opacity: 1; 
+.project-image-link:hover .project-image {
+  transform: scale(1.06);
 }
 
-.project-card-overlay h3 {
-  color: #fff; 
-  font-size: 1rem; 
+.project-image-link:hover .project-image-overlay {
+  opacity: 1;
+}
+
+.project-image-overlay h2 {
+  margin: 0 0 0.5rem;
+
+  color: whitesmoke;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 1.6rem;
+
   text-align: center;
 }
 
-.project-card-overlay a {
-  color: #fff; 
-  text-decoration: none; 
+.project-image-overlay span {
+  color: cyan;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 0.8rem;
+
+  font-weight: bold;
+
+  letter-spacing: 0.1rem;
+
+  text-transform: uppercase;
 }
 
-.project-card-overlay a:hover {
-  text-decoration: underline; 
+/* =========================
+   Project Information
+========================= */
+
+.project-info {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 1.5rem;
+
+  flex: 1;
 }
 
-.EZ {
-  color:blue;
+.project-category {
+  align-self: flex-start;
+
+  margin-bottom: 0.75rem;
+
+  padding: 0.35rem 0.75rem;
+
+  border: 1px solid rgba(0, 255, 255, 0.35);
+
+  border-radius: 20px;
+
+  background: rgba(0, 255, 255, 0.08);
+
+  color: cyan;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.08rem;
 }
 
-.carousel-container {
-  margin-top: 10rem;
-  margin: 0 auto;
+.project-info h2 {
+  margin: 0 0 0.75rem;
+
+  color: whitesmoke;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 1.5rem;
+}
+
+.project-description {
+  margin: 0;
+
+  color: #d0d0d0;
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   Technologies
+========================= */
+
+.project-technologies {
+  margin-top: 1.5rem;
+}
+
+.project-technologies h3 {
+  margin: 0 0 0.75rem;
+
+  color: #aaa;
+
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1rem;
+}
+
+.technology-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
   align-items: center;
-} */
+
+  gap: 0.7rem;
+}
+
+.technology-icon {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 32px;
+
+  min-height: 32px;
+
+  color: cyan;
+
+  font-size: 1.7rem;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+
+.project-buttons {
+  display: flex;
+
+  gap: 0.75rem;
+
+  margin-top: auto;
+
+  padding-top: 1.5rem;
+}
+
+.project-button {
+  flex: 1;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 6px;
+
+  text-align: center;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size: 0.75rem;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+
+/* GitHub */
+
+.github-button {
+  color: whitesmoke;
+
+  background: transparent;
+
+  border: 1px solid #555;
+}
+
+.github-button:hover {
+  background: whitesmoke;
+
+  color: #111;
+}
+
+
+/* Live Site */
+
+.live-button {
+  color: #050505;
+
+  background: cyan;
+
+  border: 1px solid cyan;
+}
+
+.live-button:hover {
+  background: transparent;
+
+  color: cyan;
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 768px) {
+
+  .projects-content {
+    width: 90%;
+
+    padding-top: 3.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 480px) {
+
+  .projects-content {
+    width: 92%;
+
+    padding-top: 2.5rem;
+  }
+
+  .projects-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .projects-title h1 {
+    font-size: 2.2rem;
+  }
+
+  .projects-title span {
+    font-size: 0.9rem;
+  }
+
+  .project-info {
+    padding: 1.25rem;
+  }
+
+  .project-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+  }
+
+  .project-button {
+    width: 100%;
+  }
+
+}

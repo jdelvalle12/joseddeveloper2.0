@@ -1,478 +1,115 @@
-/*Header*/
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: transparent;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   HEADER CONTAINER
+========================================= */
 
 .header-container {
-    position: relative;
-    text-align: center;
-    z-index: 100;
-    width: 100.4%;
-    height: auto;
-    line-height: 50px;
-    color: whitesmoke;
-    background-color: none;
-    text-decoration: none;
-    }
+  width: 100%;
+  max-width: 1400px;
 
-.header-container .about-me {
-    text-decoration: none;
-  }
+  margin: 0 auto;
+  padding: 1rem 2rem;
 
-.header-container .projects {
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo-link {
+  display: inline-block;
+
+  color: whitesmoke;
+
   text-decoration: none;
+
+  flex-shrink: 0;
 }
 
-.header-container .contact {
-  text-decoration: none;
+
+.logo-relative {
+  position: relative;
+
+  color: whitesmoke;
+
+  font-family: "Orbitron", "Quantico", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
-.header-container .resume {
-  text-decoration: none;
+
+.logo-relative:hover {
+  color: cyan;
+
+  text-shadow:
+    0 0 5px cyan,
+    0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-.header-container .logo-relative:hover {
-      color: limegreen;
-      }
-  
-.header-container .logo-relative {
-        position: relative;
-        color: whitesmoke;
-        font-size: 1.4rem;
-        text-decoration: none;
-      }
-      
-.header-container .logo-relative::before,
-      .logo-relative::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-      }
-      
-.header-container .logo-relative::before {
-     
-        animation: glitch-1 2s infinite;
-      }
-      
-/* .header-container .logo-relative::after {
-        
-        animation: glitch-2 3s infinite;
-      }      
-       @keyframes glitch-anim-1 {
-        0% {
-          transform: translate(0);
-          opacity: 1;
-          clip: rect(0, 900px, 100px, 0);
-        }
-        2% {
-          transform: translate(-5px, 5px);
-          clip: rect(40px, 900px, 30px, 0);
-        }
-        4% {
-          transform: translate(-5px, -10px);
-          clip: rect(80px, 900px, 60px, 0);
-        }
-        6% {
-          transform: translate(5px, 5px);
-          clip: rect(20px, 900px, 50px, 0);
-        }
-        8% {
-          transform: translate(5px, -5px);
-          clip: rect(90px, 900px, 30px, 0);
-        }
-        10% {
-          transform: translate(5px, 10px);
-          clip: rect(40px, 900px, 80px, 0);
-        }
-        12% {
-          transform: translate(-10px, -10px);
-          clip: rect(50px, 900px, 60px, 0);
-        }
-        14% {
-          transform: translate(10px, 10px);
-          clip: rect(10px, 900px, 30px, 0);
-        }
-        16% {
-          transform: translate(5px, -5px);
-          clip: rect(80px, 900px, 50px, 0);
-        }
-        18% {
-          transform: translate(-5px, 5px);
-          clip: rect(30px, 900px, 70px, 0);
-        }
-        20% {
-          transform: translate(-5px, -5px);
-          clip: rect(90px, 900px, 20px, 0);
-        }
-        22% {
-          transform: translate(-10px, 10px);
-          clip: rect(80px, 900px, 40px, 0);
-        }
-        24% {
-          transform: translate(10px, -10px);
-          clip: rect(50px, 900px, 90px, 0);
-        }
-        26% {
-          transform: translate(10px, 5px);
-          clip: rect(30px, 900px, 100px, 0);
-        }
-        28% {
-        transform: translate(-5px, 5px);
-        clip: rect(80px, 900px, 50px, 0);
-        }
-        30% {
-        transform: translate(-5px, -5px);
-        clip: rect(20px, 900px, 70px, 0);
-        }
-        32% {
-            clip: rect(10px, 900px, 10px, 0);
-        }
-        34% {
-          transform: translate(5px, -10px);
-          clip: rect(90px, 900px, 80px, 0);
-        }
-        36% {
-          transform: translate(-5px, 10px);
-          clip: rect(10px, 900px, 30px, 0);
-        }
-        38% {
-          transform: translate(-10px, -10px);
-          clip: rect(40px, 900px, 70px, 0);
-        }
-        40% {
-          transform: translate(10px, 5px);
-          clip: rect(70px, 900px, 80px, 0);
-        }
-        42% {
-          transform: translate(-5px, -5px);
-          clip: rect(50px, 900px, 50px, 0);
-        }
-        44% {
-          transform: translate(5px, -10px);
-          clip: rect(40px, 900px, 70px, 0);
-        }
-        46% {
-          transform: translate(-10px, 10px);
-          clip: rect(20px, 900px, 10px, 0);
-        }
-        48% {
-          transform: translate(10px, -10px);
-          clip: rect(80px, 900px, 60px, 0);
-        }
-        50% {
-          transform: translate(-5px, 5px);
-          clip: rect(60px, 900px, 90px, 0);
-        }
-        52% {
-          transform: translate(10px, 5px);
-          clip: rect(40px, 900px, 60px, 0);
-        }
-        54% {
-          transform: translate(5px, -5px);
-          clip: rect(10px, 900px, 80px, 0);
-        }
-        56% {
-          transform: translate(-5px, 10px);
-          clip: rect(60px, 900px, 10px, 0);
-        }
-        58% {
-          transform: translate(-10px, -5px);
-          clip: rect(30px, 900px, 50px, 0);
-        }
-        60% {
-          transform: translate(5px, -5px);
-          clip: rect(70px, 900px, 60px, 0);
-        }
-        62% {
-          transform: translate(10px, 5px);
-          clip: rect(90px, 900px, 80px, 0);
-        }
-        64% {
-          transform: translate(5px, -10px);
-          clip: rect(30px, 900px, 30px, 0);
-        }
-        66% {
-          transform: translate(-10px, 10px);
-          clip: rect(10px, 900px, 50px, 0);
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .header-container {
+    padding: 1rem 1.5rem;
   }
-  68% {
-    transform: translate(5px, -5px);
-    clip: rect(20px, 900px, 30px, 0);
-  }
-  70% {
-    transform: translate(-5px, 10px);
-    clip: rect(90px, 900px, 20px, 0);
-  }
-  72% {
-    transform: translate(10px, -10px);
-    clip: rect(80px, 900px, 60px, 0);
-  }
-  74% {
-    transform: translate(10px, 5px);
-    clip: rect(60px, 900px, 10px, 0);
-  }
-  76% {
-    transform: translate(5px, -10px);
-    clip: rect(10px, 900px, 80px, 0);
-  }
-  78% {
-    transform: translate(5px, 10px);
-    clip: rect(50px, 900px, 10px, 0);
-  }
-  80% {
-    transform: translate(-5px, -5px);
-    clip: rect(20px, 900px, 70px, 0);
-  }
-  82% {
-    transform: translate(-10px, 10px);
-    clip: rect(10px, 900px, 50px, 0);
-  }
-  84% {
-    transform: translate(5px, -5px);
-    clip: rect(40px, 900px, 30px, 0);
-  }
-  86% {
-    transform: translate(-5px, 10px);
-    clip: rect(80px, 900px, 20px, 0);
-  }
-  88% {
-    transform: translate(10px, -10px);
-    clip: rect(30px, 900px, 60px, 0);
-  }
-  90% {
-    transform: translate(10px, 5px);
-    clip: rect(70px, 900px, 10px, 0);
-  }
-  92% {
-    transform: translate(5px, -10px);
-    clip: rect(10px, 900px, 80px, 0);
-  }
-  94% {
-    transform: translate(5px, 10px);
-    clip: rect(60px, 900px, 10px, 0);
-  }
-  96% {
-    transform: translate(-5px, -5px);
-    clip: rect(20px, 900px, 70px, 0);
-  }
-  98% {
-    transform: translate(-10px, 10px);
-    clip: rect(10px, 900px, 50px, 0);
-  }
-  100% {
-    transform: translate(0);
-    opacity: 1;
-    clip: rect(0, 900px, 100px, 0);
-  }
+
 }
 
-@keyframes glitch-anim-2 {
-    0% {
-      transform: translate(0);
-      opacity: 1;
-      clip: rect(0, 900px, 100px, 0);
-    }
-    2% {
-      transform: translate(-5px, 5px);
-      clip: rect(40px, 900px, 30px, 0);
-    }
-    4% {
-      transform: translate(-5px, -10px);
-      clip: rect(80px, 900px, 60px, 0);
-    }
-    6% {
-      transform: translate(5px, 5px);
-      clip: rect(20px, 900px, 50px, 0);
-    }
-    8% {
-      transform: translate(5px, -5px);
-      clip: rect(90px, 900px, 30px, 0);
-    }
-    10% {
-      transform: translate(5px, 10px);
-      clip: rect(40px, 900px, 80px, 0);
-    }
-    12% {
-      transform: translate(-10px, -10px);
-      clip: rect(50px, 900px, 60px, 0);
-    }
-    14% {
-      transform: translate(10px, 10px);
-      clip: rect(10px, 900px, 30px, 0);
-    }
-    16% {
-      transform: translate(5px, -5px);
-      clip: rect(80px, 900px, 50px, 0);
-    }
-    18% {
-      transform: translate(-5px, 5px);
-      clip: rect(30px, 900px, 70px, 0);
-    }
-    20% {
-      transform: translate(-5px, -5px);
-      clip: rect(90px, 900px, 20px, 0);
-    }
-    22% {
-      transform: translate(-10px, 10px);
-      clip: rect(80px, 900px, 40px, 0);
-    }
-    24% {
-      transform: translate(10px, -10px);
-      clip: rect(50px, 900px, 90px, 0);
-    }
-    26% {
-      transform: translate(10px, 5px);
-      clip: rect(30px, 900px, 100px, 0);
-    }
-    28% {
-    transform: translate(-5px, 5px);
-    clip: rect(80px, 900px, 50px, 0);
-    }
-    30% {
-    transform: translate(-5px, -5px);
-    clip: rect(20px, 900px, 70px, 0);
-    }
-    32% {
-        clip: rect(10px, 900px, 10px, 0);
-    }
-    34% {
-      transform: translate(5px, -10px);
-      clip: rect(90px, 900px, 80px, 0);
-    }
-    36% {
-      transform: translate(-5px, 10px);
-      clip: rect(10px, 900px, 30px, 0);
-    }
-    38% {
-      transform: translate(-10px, -10px);
-      clip: rect(40px, 900px, 70px, 0);
-    }
-    40% {
-      transform: translate(10px, 5px);
-      clip: rect(70px, 900px, 80px, 0);
-    }
-    42% {
-      transform: translate(-5px, -5px);
-      clip: rect(50px, 900px, 50px, 0);
-    }
-    44% {
-      transform: translate(5px, -10px);
-      clip: rect(40px, 900px, 70px, 0);
-    }
-    46% {
-      transform: translate(-10px, 10px);
-      clip: rect(20px, 900px, 10px, 0);
-    }
-    48% {
-      transform: translate(10px, -10px);
-      clip: rect(80px, 900px, 60px, 0);
-    }
-    50% {
-      transform: translate(-5px, 5px);
-      clip: rect(60px, 900px, 90px, 0);
-    }
-    52% {
-      transform: translate(10px, 5px);
-      clip: rect(40px, 900px, 60px, 0);
-    }
-    54% {
-      transform: translate(5px, -5px);
-      clip: rect(10px, 900px, 80px, 0);
-    }
-    56% {
-      transform: translate(-5px, 10px);
-      clip: rect(60px, 900px, 10px, 0);
-    }
-    58% {
-      transform: translate(-10px, -5px);
-      clip: rect(30px, 900px, 50px, 0);
-    }
-    60% {
-      transform: translate(5px, -5px);
-      clip: rect(70px, 900px, 60px, 0);
-    }
-    62% {
-      transform: translate(10px, 5px);
-      clip: rect(90px, 900px, 80px, 0);
-    }
-    64% {
-      transform: translate(5px, -10px);
-      clip: rect(30px, 900px, 30px, 0);
-    }
-    66% {
-      transform: translate(-10px, 10px);
-      clip: rect(10px, 900px, 50px, 0);
-}
-68% {
-transform: translate(5px, -5px);
-clip: rect(20px, 900px, 30px, 0);
-}
-70% {
-transform: translate(-5px, 10px);
-clip: rect(90px, 900px, 20px, 0);
-}
-72% {
-transform: translate(10px, -10px);
-clip: rect(80px, 900px, 60px, 0);
-}
-74% {
-transform: translate(10px, 5px);
-clip: rect(60px, 900px, 10px, 0);
-}
-76% {
-transform: translate(5px, -10px);
-clip: rect(10px, 900px, 80px, 0);
-}
-78% {
-transform: translate(5px, 10px);
-clip: rect(50px, 900px, 10px, 0);
-}
-80% {
-transform: translate(-5px, -5px);
-clip: rect(20px, 900px, 70px, 0);
-}
-82% {
-transform: translate(-10px, 10px);
-clip: rect(10px, 900px, 50px, 0);
-}
-84% {
-transform: translate(5px, -5px);
-clip: rect(40px, 900px, 30px, 0);
-}
-86% {
-transform: translate(-5px, 10px);
-clip: rect(80px, 900px, 20px, 0);
-}
-88% {
-transform: translate(10px, -10px);
-clip: rect(30px, 900px, 60px, 0);
-}
-90% {
-transform: translate(10px, 5px);
-clip: rect(70px, 900px, 10px, 0);
-}
-92% {
-transform: translate(5px, -10px);
-clip: rect(10px, 900px, 80px, 0);
-}
-94% {
-transform: translate(5px, 10px);
-clip: rect(60px, 900px, 10px, 0);
-}
-96% {
-transform: translate(-5px, -5px);
-clip: rect(20px, 900px, 70px, 0);
-}
-98% {
-transform: translate(-10px, 10px);
-clip: rect(10px, 900px, 50px, 0);
-}
-100% {
-transform: translate(0);
-opacity: 1;
-clip: rect(0, 900px, 100px, 0);
-}
-} */
 
+/* =========================================
+   MOBILE
+========================================= */
 
+@media (max-width: 768px) {
+
+  .header-container {
+    width: 100%;
+
+    padding: 0.75rem 1rem;
+
+    gap: 1rem;
+  }
+
+  .logo-relative {
+    font-size: 0.95rem;
+  }
+
+}

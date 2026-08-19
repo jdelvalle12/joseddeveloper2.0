@@ -1,53 +1,419 @@
-/* Home */
+/* =========================================
+   HOME / HERO SECTION
+========================================= */
 
-/* .home-container .section {
-    
-    max-width: 180%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    color: white;
-    padding-bottom: 10rem; 
-    padding-right: 0;
-   } */
+.home-container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: whitesmoke;
+}
 
-  /* .home-container .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    height: 80%;
-    object-fit: cover;
-    background-size: cover;
-    overflow-x: hidden;
-  } */
 
-  /* .home-content h1{
-    position: relative;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-left: 5rem;
-    color: aliceblue;
-    margin-bottom: 6rem;
-    margin-top: 18rem;
-    width: 17rem;
+/* =========================
+   Background
+========================= */
+
+.home-background {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+}
+
+
+/* =========================
+   Overlay
+========================= */
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(5, 5, 20, 0.55),
+      rgba(5, 5, 20, 0.85)
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================
+   Hero Content
+========================= */
+
+.home-content {
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  width: min(900px, 90%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.home-eyebrow {
+  margin: 0 0 1rem;
+
+  font-family: "Orbitron", "Quantico", sans-serif;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  letter-spacing: 0.25rem;
+
+  color: cyan;
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.home-content h1 {
+  max-width: 900px;
+
+  margin: 0 0 1.5rem;
+
+  font-family: "Orbitron", "Quantico", sans-serif;
+
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  color: white;
+}
+
+
+/* Accent portion of heading */
+
+.home-content h1 span {
+  color: cyan;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.home-description {
+  max-width: 650px;
+
+  margin: 0 0 2rem;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: clamp(1rem, 2vw, 1.25rem);
+
+  line-height: 1.7;
+
+  color: #d6d6d6;
+}
+
+
+/* =========================================
+   BUTTON CONTAINER
+========================================= */
+
+.home-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.home-button {
+  display: inline-block;
+
+  padding: 0.9rem 1.6rem;
+
+  border: 1px solid cyan;
+
+  border-radius: 5px;
+
+  background: rgba(0, 255, 255, 0.08);
+
+  color: white;
+
+  font-family: "Orbitron", "Quantico", sans-serif;
+
+  font-size: 0.9rem;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Primary button hover */
+
+.home-button:hover {
+  background-color: cyan;
+
+  color: black;
+
+  transform: translateY(-3px);
+}
+
+
+/* Secondary button */
+
+.home-button.secondary {
+  border-color: magenta;
+
+  background: rgba(255, 0, 255, 0.08);
+}
+
+
+/* Secondary button hover */
+
+.home-button.secondary:hover {
+  background-color: magenta;
+
+  color: white;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   SUBTLE CYAN GLOW
+========================================= */
+
+.home-container::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -200px;
+  right: -150px;
+
+  background: cyan;
+
+  opacity: 0.07;
+
+  filter: blur(120px);
+
+  border-radius: 50%;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SUBTLE MAGENTA GLOW
+========================================= */
+
+.home-container::after {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  bottom: -200px;
+  left: -150px;
+
+  background: magenta;
+
+  opacity: 0.07;
+
+  filter: blur(120px);
+
+  border-radius: 50%;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 991px) {
+
+  .home-content {
+    width: 90%;
+    padding: 2rem;
   }
-  
-  .home-content p {
-    position: absolute;
-    font-size: 1.3rem;
-    line-height: 2rem;
-    text-align: justify;
-    margin-right: 1rem;
-    color: white;
-    padding-bottom: 1rem;
-    margin-left: 5rem;
-    margin-top: 1.5rem;
+
+  .home-content h1 {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .home-container {
+    width: 100%;
+
+    min-height: calc(100vh - 70px);
+
+    background-position: center center;
+
+    overflow: hidden;
+  }
+
+
+  .home-content {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 2rem 1.25rem;
+
+    text-align: center;
+
+    box-sizing: border-box;
+  }
+
+
+  .home-eyebrow {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15rem;
+
     margin-bottom: 1rem;
-    width: 17rem;
-  } */
- 
+  }
+
+
+  .home-content h1 {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0 auto 1.5rem;
+
+    font-size: clamp(2rem, 10vw, 3.5rem);
+
+    line-height: 1.1;
+  }
+
+
+  .home-description {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto 2rem;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+  }
+
+
+  .home-actions {
+    justify-content: center;
+
+    align-items: center;
+  }
+
+
+  .home-button {
+    padding: 0.75rem 1.1rem;
+
+    font-size: 0.8rem;
+  }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 480px) {
+
+  .home-container {
+    min-height: calc(100vh - 70px);
+  }
+
+
+  .home-content {
+    padding: 1.5rem 1rem;
+  }
+
+
+  .home-eyebrow {
+    font-size: 0.65rem;
+
+    letter-spacing: 0.1rem;
+  }
+
+
+  .home-content h1 {
+    font-size: clamp(1.9rem, 11vw, 2.8rem);
+  }
+
+
+  .home-description {
+    font-size: 0.95rem;
+  }
+
+
+  .home-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+
+  .home-button {
+    width: 100%;
+
+    max-width: 250px;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+  }
+}

@@ -1,65 +1,133 @@
-/*About me*/
+/* =========================
+   ABOUT PAGE
+========================= */
 
-.aboutme-container  {
-  background-image: url('../images/Background.jpg');
+.about-container {
   width: 100%;
-  height: 100%;
-  display: block;
-  flex-wrap: wrap;
-  flex-direction: column;
+  min-height: 100vh;
+
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  padding: 4rem 1.5rem;
+
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  color: white;
-  padding-bottom: 10rem; 
-  /* margin: 2rem; */
+
+  box-sizing: border-box;
 }
 
-.aboutme-container .description {
-  position: relative;
-  font-size: 1rem;
-  color: black;
-  max-width: 55%;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+/* =========================
+   CONTENT
+========================= */
+
+.about-content {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 2rem;
+
+  box-sizing: border-box;
 }
 
-.aboutme-container .aboutme {
-  position: relative;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+/* =========================
+   TITLE
+========================= */
+
+.about-title {
+  margin: 0 0 2rem;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
   color: black;
-  margin-left: 3rem;
-  width: 15rem;
+
+  transition: color 0.3s ease;
 }
+
+.about-title:hover {
+  color: cyan;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
 
 .profile-picture {
-  position: relative;
-  max-width: 28%;
+  width: min(250px, 70vw);
   height: auto;
-  border-radius: 5%;
-  margin-left: 5rem;
-  margin-top: 3rem;
-  /* Add any other styling for the profile picture here */
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  margin-bottom: 2rem;
 }
 
-/* .aboutme-container h2 {
-  position: relative;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-right: 20rem;
-    color: black;
-    
-} */
+/* =========================
+   INTRODUCTION
+========================= */
 
-.abouttitle {
-  font-size: 2.5rem;
-  margin-left: 5rem;
-  color:black;
+.about-heading {
+  margin: 0 0 1.5rem;
+
+  font-size: clamp(1.4rem, 4vw, 2rem);
+
+  color: #ffffff;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
-.abouttitle:hover {
-  color: cyan;
+/* =========================
+   DESCRIPTION
+========================= */
+
+.about-description {
+  width: 100%;
+  max-width: 750px;
+
+  color: black;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  text-align: left;
+  color: #ffffff;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.about-description p {
+  margin: 0 0 1.25rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .about-container {
+    padding: 2rem 1rem;
+  }
+
+  .about-content {
+    padding: 1rem;
+  }
+
+  .profile-picture {
+    width: min(200px, 60vw);
+  }
+
+  .about-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
 }
